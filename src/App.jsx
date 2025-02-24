@@ -93,8 +93,8 @@ function HomePage() {
           </div>
           <div className="footer-section">
             <h3>Contact Us</h3>
-            <p>Email: info@campusloop.com</p>
-            <p>Phone: (555) 123-4567</p>
+            <p>Email: campuslooploop@gmail.com</p>
+            <p>Phone: +91 696969696</p>
           </div>
           <div className="footer-section">
             <h3>Follow Us</h3>
