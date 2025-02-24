@@ -1,0 +1,135 @@
+:root {
+  font-family: "Figtree",Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #000000;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+
+a {
+  font-weight: 500;
+  color: #444cf7;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #000000;
+}
+
+/* Remove place-items: center to prevent layout issues */
+#root {
+  min-height: 100vh;
+  width: 100%;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #444cf7;
+  color: white;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+button:hover {
+  background-color: #535bf2;
+  border-color: #646cff;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* Remove light theme styles as we're using dark theme exclusively */
+/* @media (prefers-color-scheme: light) {...} */
+
+/* Additional global styles */
+input {
+  font-family: inherit;
+}
+
+/* Ensure proper spacing for sections */
+section {
+  width: 100%;
+}
+
+/* Remove any conflicting margin/padding */
+p {
+  margin: 0;
+}
+
+/* Ensure proper heading hierarchy */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: 600;
+}
+/* Previous index.css styles remain the same */
+
+
+
+/* scrollbar */
+
+/* Custom Scrollbar for Webkit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #444cf7;
+  border-radius: 8px;
+  border: 3px solid #000000;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #535bf2;
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #444cf7 #000000;
+}
+
+/* For Firefox dark theme compatibility */
+@supports (-moz-appearance: none) {
+  * {
+    scrollbar-color: #444cf7 #000000;
+  }
+}
