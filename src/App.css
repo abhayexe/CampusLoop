@@ -3,14 +3,27 @@
   opacity: 1;
   background-image: radial-gradient(#000dff 0.7000000000000001px, #000000 0.7000000000000001px);
   background-size: 14px 14px; */
+
+
+
+
+
+
+
   color: white;
   min-height: 100vh;
   position: relative;
 
 
+
+
+
+
+
+
   /* polka bg */
 
-  background-color: #000000;
+  /* background-color: #000000;
   opacity: 1;
   background: radial-gradient(
       circle,
@@ -31,8 +44,7 @@
       10px 10px,
     linear-gradient(#444cf7 0.8px, transparent 0.8px) 0 -0.4px,
     linear-gradient(90deg, #444cf7 0.8px, #000000 0.8px) -0.4px 0;
-  background-size: 20px 20px, 20px 20px, 10px 10px, 10px 10px;
-
+  background-size: 20px 20px, 20px 20px, 10px 10px, 10px 10px; */
 
   /* gradient bg */
 
@@ -40,14 +52,45 @@
   background-image:
   radial-gradient(at 78% 89%, rgb(0, 47, 128) 0px, transparent 50%),
   radial-gradient(at 0% 0%, rgb(0, 18, 83) 0px, transparent 50%); */
+
+
+
+  background: linear-gradient(
+      -90deg,
+      rgba(255, 255, 255, 0.06) 1px,
+      transparent 1px
+    ),
+    linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(-90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(
+      transparent 3px,
+      #000232 3px,
+      #000232 78px,
+      transparent 78px
+    ),
+    linear-gradient(-90deg, #555 1px, transparent 1px),
+    linear-gradient(
+      -90deg,
+      transparent 3px,
+      #000232 3px,
+      #000232 78px,
+      transparent 78px
+    ),
+    linear-gradient(#555 1px, transparent 1px), #000232;
+  background-size: 4px 4px, 4px 4px, 80px 80px, 80px 80px, 80px 80px, 80px 80px,
+    80px 80px, 80px 80px;
 }
+
+
+
 
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 5%;
-  background-color: rgba(91, 102, 255, 0.121);
+  background-color: rgba(255, 239, 91, 0);
   backdrop-filter: blur(5px);
   position: fixed;
   width: 97%;

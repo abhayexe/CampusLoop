@@ -1,23 +1,38 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { supabase } from './supabaseClient'; // Import Supabase client
 import './Login.css';
 
 function Login() {
   const [formData, setFormData] = useState({
     email: '',
-    password: ''
+    password: '',
   });
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle login logic here
-    console.log('Login attempt:', formData);
+    setError('');
+
+    try {
+      const { data, error } = await supabase.auth.signInWithPassword({
+        email: formData.email,
+        password: formData.password,
+      });
+
+      if (error) throw error;
+      console.log('Logged in:', data);
+      navigate('/'); // Redirect to home or dashboard after login
+    } catch (error) {
+      setError(error.message);
+    }
   };
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
@@ -48,7 +63,10 @@ function Login() {
               required
             />
           </div>
-          <button type="submit" className="login-submit-btn">Login</button>
+          {error && <p className="login-error">{error}</p>}
+          <button type="submit" className="login-submit-btn">
+            Login
+          </button>
         </form>
         <p className="login-redirect">
           Don't have an account? <Link to="/signup">Sign Up</Link>

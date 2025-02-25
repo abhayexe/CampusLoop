@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { supabase } from './supabaseClient'; // Import Supabase client
 import './Signup.css';
 
 function Signup() {
@@ -7,19 +8,45 @@ function Signup() {
     fullName: '',
     email: '',
     password: '',
-    confirmPassword: ''
+    confirmPassword: '',
   });
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle signup logic here
-    console.log('Signup attempt:', formData);
+    setError('');
+
+    // Check if passwords match
+    if (formData.password !== formData.confirmPassword) {
+      setError('Passwords do not match');
+      return;
+    }
+
+    try {
+      const { data, error } = await supabase.auth.signUp({
+        email: formData.email,
+        password: formData.password,
+        options: {
+          data: {
+            full_name: formData.fullName, // Store additional user data
+          },
+        },
+      });
+
+      if (error) throw error;
+      console.log('Signed up:', data);
+      alert('Check your email for the confirmation link!');
+      navigate('/login'); // Redirect to login after signup
+    } catch (error) {
+      setError(error.message);
+    }
   };
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
@@ -72,7 +99,10 @@ function Signup() {
               required
             />
           </div>
-          <button type="submit" className="signup-submit-btn">Sign Up</button>
+          {error && <p className="signup-error">{error}</p>}
+          <button type="submit" className="signup-submit-btn">
+            Sign Up
+          </button>
         </form>
         <p className="signup-redirect">
           Already have an account? <Link to="/login">Login</Link>
