@@ -41,6 +41,9 @@ function HomePage() {
     <>
       <section className="hero">
         {/* <h1>Connect, Share, Grow</h1> */}
+        <img src="/superhero.png" draggable="false" alt="Superhero" className="superhero-image" />
+        <div class="line"></div>
+        <hr />
         <h1>Rent ⋄ Return ⋄ Reduce</h1>
         <p>
           Experience a smarter way to rent everything you need appliances,
@@ -49,7 +52,8 @@ function HomePage() {
           delivery, and priority listings. Join us in building a circular
           economy where sharing meets convenience.
         </p>
-        <button className="get-started-btn">Get Started</button>
+
+        <button className="btn">Get Started</button>
       </section>
 
       <section className="about">
@@ -66,7 +70,7 @@ function HomePage() {
             </p>
           </div>
           <img
-            src="/about-image.jpg"
+            src="/rentra.png"
             alt="Students collaborating"
             className="about-image"
           />
