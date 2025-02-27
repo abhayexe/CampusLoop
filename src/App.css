@@ -176,6 +176,11 @@
   -webkit-text-fill-color: transparent;
 }
 
+.hero p{
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
 .get-started-btn {
   padding: 1rem 2.5rem;
   font-size: 1.2rem;
@@ -230,9 +235,15 @@
 .feature-card {
   background-color: rgba(21, 0, 255, 0.1);
   backdrop-filter: blur(2px);
-  padding: 2rem;
+  padding: 1rem;
   border-radius: 10px;
   text-align: center;
+}
+
+.feature-card h3 {
+  font-size: 1.0rem;
+  margin-bottom: 1rem;
+  color: #b9fffd;
 }
 
 .campus-life {
@@ -264,10 +275,19 @@ footer {
   padding: 0;
 }
 
+.footer-section h3{
+  color: #f8e559;
+}
+
 .footer-section ul li {
   margin: 0.5rem 0;
   cursor: pointer;
 }
+
+/* .footer-links{
+  display: flex;
+  gap: 1rem;
+} */
 
 .social-links {
   display: flex;
